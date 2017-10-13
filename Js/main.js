@@ -1,28 +1,27 @@
 $(document).ready(function(){
 //
-  $('.small-img').on('click',function(){
-    $('#black-background').addClass('black-background');
-    $('#contain-img').addClass('container-enlarge');
-    $('.small-img').addClass('img-enlarge');
+  $('.container').on('click',function(){
+    $('.container').addClass('container-enlarge');
+    $('.container').addClass('container-move');
+    $('#background').addClass('black-background');
 
   });
 
   $('body').on('click',function(e){
-    if (!$(e.target).closest('.small-img').length) {
+    if (!$(e.target).closest('.container-enlarge').length) {
+      $('#background').removeClass('black-background');
+      $('.container').removeClass('container-enlarge');
+      $('.container').removeClass('container-move');
 
-      $('#black-background').removeClass('black-background');
-      $('#contain-img').removeClass('container-enlarge');
-      $('.small-img').removeClass('img-enlarge');
     }
   });
-  $(document).scroll(function(){
-    if ($('#black-background').hasClass('black-background')) {
-
-      $('#black-background').removeClass('black-background');
-      $('#contain-img').removeClass('container-enlarge');
-      $('.small-img').removeClass('img-enlarge');
-    }
-
-  });
+  // $(document).scroll(function(){
+  //   if ($('#black-background').hasClass('black-background')) {
+  //
+  //     $('#black-background').removeClass('black-background');
+  //     $('.container').removeClass('container-enlarge');
+  //   }
+  //
+  // });
 
 });
