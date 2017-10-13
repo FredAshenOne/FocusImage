@@ -6,14 +6,18 @@ $(document).ready(function(){
     $('#background').addClass('black-background');
 
   });
+$('.slicon').on('click',function(){
+  $('#content').addClass('display-el');
+});
 
   $('body').on('click',function(e){
     if (!$(e.target).closest('.container-enlarge').length) {
       $('#background').removeClass('black-background');
       $('.container').removeClass('container-enlarge');
       $('.container').removeClass('container-move');
-
-    }
+      $('#content').addClass('display-el');
+      $('#content').removeClass('par-container');
+      }
   });
   // $(document).scroll(function(){
   //   if ($('#black-background').hasClass('black-background')) {
